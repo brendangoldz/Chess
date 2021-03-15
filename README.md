@@ -3,9 +3,14 @@ Requirements:
 
 1. Command Prompt or Terminal
 2. Apache Maven installed and exported to Path
-3. Java JDK 1.8 or greater
+3. JUnit installed with Eclipse
+4. Java JDK 1.8 or greater
 
 ### Building / JUnits
+  To run only JUnits, import project into Eclipse and ensure JUnit is installed
+  
+  Navigate to PieceValidatorTest, right-click and Run As > Junit Test
+
   In root of project,  ```mvn clean install```
   
   This will output a jar file to the target/ folder of the project and run JUnits with compilation

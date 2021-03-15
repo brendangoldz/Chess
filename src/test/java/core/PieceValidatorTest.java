@@ -1,22 +1,19 @@
 package core;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.junit.Ignore;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.drexel.edu.se567.Chess.Board.BoardFactory;
 import com.drexel.edu.se567.Chess.Board.BoardInput;
-@Ignore
 class PieceValidatorTest {
 	PieceValidator pv;
 	BoardFactory bf;
