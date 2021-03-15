@@ -5,11 +5,13 @@ Requirements:
 2. Apache Maven installed and exported to Path
 3. Java JDK 1.8 or greater
 
-### Building
+### Building / JUnits
   In root of project,  ```mvn clean install```
-  This will output a jar file to the target/ folder of the project
+  
+  This will output a jar file to the target/ folder of the project and run JUnits with compilation
 ### Running
   Navigate to target/ folder of project and perform ```java -jar /path/to/jar/```
+  
   
 # Chess
 The objective of this project is to take in a stringed chess anotation of given pieces for both White and Black pieces.
