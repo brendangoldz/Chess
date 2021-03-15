@@ -11,7 +11,7 @@ Requirements:
   
   Navigate to PieceValidatorTest, right-click and Run As > Junit Test
 
-  In root of project,  ```mvn clean install```
+  In root of project,  ```mvn clean install site```
   
   This will output a jar file to the target/ folder of the project and run JUnits with compilation
 ### Running
