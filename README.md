@@ -90,9 +90,9 @@ generate(List<Tile> pieces)
 
 Methods:
 ```java
-inputWhitePieces(List<Tile> pieces)
-inputBlackPieces(List<Tile> pieces)
-getNextMove(List<Tile> pieces)
+static void inputWhitePieces(List<Tile> pieces)
+static void inputBlackPieces(List<Tile> pieces)
+static void getNextMove(List<Tile> pieces)
 ```
 
 ### BoardController
