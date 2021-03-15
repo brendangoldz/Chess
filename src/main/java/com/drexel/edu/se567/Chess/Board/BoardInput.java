@@ -24,42 +24,51 @@ public class BoardInput {
 	public static void inputWhitePieces(List<Tile> pieces) {
 		System.out.println("**WHITE POSITION ENTRY**\n");
 		final ColorEnum col = ColorEnum.WHITE;
+		
+		try {
+			Scanner s = new Scanner(System.in);
+			String input = s.nextLine();
 
-		Scanner s = new Scanner(System.in);
-		String input = s.nextLine();
-
-		String[] inputs = input.split(",");
-		Tile t = null;
-		for (String str : inputs) {
-			char[] piece = str.trim().toCharArray();
-			PieceEnum pe = PieceEnum.fromString(String.valueOf(piece[0]));
-			char column = piece[1];
-			int row = Integer.parseInt(String.valueOf(piece[2]));
-			t = new Tile(row, column, new Piece(pe, col));
-			if (t != null)
-				pieces.add(t);
+			String[] inputs = input.split(",");
+			Tile t = null;
+			for (String str : inputs) {
+				char[] piece = str.trim().toCharArray();
+				PieceEnum pe = PieceEnum.fromString(String.valueOf(piece[0]));
+				char column = piece[1];
+				int row = Integer.parseInt(String.valueOf(piece[2]));
+				t = new Tile(row, column, new Piece(pe, col));
+				if (t != null)
+					pieces.add(t);
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid input, restarting white position entry.");
+			BoardInput.inputWhitePieces(pieces);
 		}
-
 	}
 
 	public static void inputBlackPieces(List<Tile> pieces) {
 		System.out.println("**BLACK POSITION ENTRY**\n");
 		final ColorEnum col = ColorEnum.BLACK;
+		try { 
+			Scanner s = new Scanner(System.in);
+			String input = s.nextLine();
+			String[] inputs = input.split(",");
+			Tile t = null;
+			for (String str : inputs) {
+				char[] piece = str.trim().toCharArray();
+				PieceEnum pe = PieceEnum.fromString(String.valueOf(piece[0]));
+				char column = piece[1];
+				int row = Integer.parseInt(String.valueOf(piece[2]));
+				t = new Tile(row, column, new Piece(pe, col));
 
-		Scanner s = new Scanner(System.in);
-		String input = s.nextLine();
-		String[] inputs = input.split(",");
-		Tile t = null;
-		for (String str : inputs) {
-			char[] piece = str.trim().toCharArray();
-			PieceEnum pe = PieceEnum.fromString(String.valueOf(piece[0]));
-			char column = piece[1];
-			int row = Integer.parseInt(String.valueOf(piece[2]));
-			t = new Tile(row, column, new Piece(pe, col));
-
-			if (t != null)
-				pieces.add(t);
+				if (t != null)
+					pieces.add(t);
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid input, restarting black position entry.");
+			BoardInput.inputBlackPieces(pieces);
 		}
+		
 	}
 
 	public static Tile getNextMove(List<Tile> pieces) {

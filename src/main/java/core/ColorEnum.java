@@ -8,7 +8,7 @@ public enum ColorEnum {
 	ColorEnum(String color) {
 		this.name = color;
 	}
-	
+	@Override
 	public String toString() {
 		return name;
 	}

@@ -1,6 +1,5 @@
 package com.drexel.edu.se567.Chess.Board;
 
-import java.io.Console;
 import java.util.ArrayList;
 
 import core.PieceValidator;
@@ -20,22 +19,11 @@ public class BoardController {
 
 		ArrayList<Tile> pieces = new ArrayList<>();
 
-		try {
-			BoardInput.inputWhitePieces(pieces);
-		} catch (Exception e) {
-			System.out.println("Invalid input, restarting white position entry.");
-			BoardInput.inputWhitePieces(pieces);
-		}
-		try {
-			BoardInput.inputBlackPieces(pieces);
-		} catch (Exception e) {
-			System.out.println("Invalid input, restarting black position entry.");
-			BoardInput.inputBlackPieces(pieces);
-		}
+		BoardInput.inputWhitePieces(pieces);
+
+		BoardInput.inputBlackPieces(pieces);
 
 		ArrayList<Tile> board = (ArrayList<Tile>) bf.generate(pieces);
-
-		System.out.println("Board after generation:\n" + bf.toString());
 
 		Tile t = null;
 		while (t == null)
@@ -54,7 +42,7 @@ public class BoardController {
 		//Ka1, Qa3, Pa4, Pb3, Nc2
 		//Ka8, Rb8, Pa7, Pb6, Bc7
 
-		BoardController bc = new BoardController();
+		new BoardController();
 	}
 
 }

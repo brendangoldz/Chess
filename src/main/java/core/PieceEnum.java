@@ -15,7 +15,7 @@ public enum PieceEnum {
 	PieceEnum(String string) {
 		this.name = string;
 	}
-
+	@Override
 	public String toString() {
 		return name;
 	}

@@ -72,26 +72,33 @@ public class Tile {
 		if (this.getPiece().getPe() == null) {
 			sb.append(this.getCol() + String.valueOf(this.getRow()));
 		} else {
-			String col = this.getPiece().getColor().toString();
-			sb.append(col);
-			String piece = this.getPiece().getPe().toString();
-			sb.append(piece + this.getCol() + String.valueOf(this.getRow()));
+			sb.append(this.getPiece().getColor().toString());
+			sb.append(this.getPiece().getPe().toString() + this.getCol() + String.valueOf(this.getRow()));
 		}
 
 		return sb.toString();
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (o instanceof Tile) {
-			Tile check = (Tile) o;
-			if (this.getCol() != check.getCol() || this.getRow() != check.getRow()) {
-				return false;
-			}
-		} else {
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Tile))
 			return false;
-
-		}
+		Tile other = (Tile) obj;
+		if (col != other.col)
+			return false;
+		if (row != other.row)
+			return false;
 		return true;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + col;
+		result = prime * result + row;
+		return result;
 	}
 }

@@ -27,19 +27,6 @@ public class BoardFactory {
 				}
 			}
 		}		
-//		for (int row : rows) {
-//			for (int i = 0; i < columns.length; i++) {
-//				Tile passedTile = tiles.get(i);
-//				char c = columns[i];
-//
-//				Tile t = new Tile(row, c);
-//				if(t.equals(passedTile)) {
-//					t = passedTile;
-//				}
-//				board.add(t);
-//
-//			}
-//		}
 		return board;
 	}
 	
