@@ -112,7 +112,10 @@ play()
 Utilized JUnit and Mockito to ascertain the return values of the following methods in PieceValidator.java:
 ```java
   validateMove
-  getMoves 
+  //Provides Validation for total expected output for all possible pieces
+  getMoves  
+  //The following test cases verify the validation methodologies 
+  //employed for each type of piece. Combined test output validation with real chess board
   validatePawnMove
   validateKingMove
   validateQueenMove
