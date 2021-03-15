@@ -18,11 +18,11 @@ The objective of this project is to take in a stringed chess anotation of given 
 
  1. Black Positions
     
-    Ka8, Rb8, Rc7, Pa7, Pb6, Pc5, Bd6
+    Ka8, Rb8, Rc7, Pa7, Pb6, Pc5, Bd6*
     
  2. White Positions
   
-    Ka1, Qa3, Pa4, Pb3, Bd4, Pc3, Pd3, Nc4
+    Ka1, Qa3, Pa4, Pb3, Bd4, Pc3, Pd3, Nc4*
 
 These inputs would generate:
 
@@ -42,3 +42,81 @@ a2   b2   c2   d2   e2   f2   g2   h2
 
 Ka1  b1  c1  d1  e1  f1  g1  h1
 
+# Data Types
+
+### Tile
+
+Attributes:
+
+```java
+int row;
+char col;
+Piece p;
+```
+Methods:
+```java
+@Override
+equals - for example, used for checking if target tile is same as piece to move
+@Override
+hashCode
+```
+
+### Piece
+
+Attributes:
+
+```java
+PieceEnum pe;
+ColorEnum color;
+```
+
+# Board Management
+
+### BoardFactory
+
+Attributes:
+
+```java
+ArrayList<Tile> board;
+```
+
+Methods:
+```java
+resetBoard()
+generate(List<Tile> pieces)
+```
+
+### BoardInput
+
+Methods:
+```java
+inputWhitePieces(List<Tile> pieces)
+inputBlackPieces(List<Tile> pieces)
+getNextMove(List<Tile> pieces)
+```
+
+### BoardController
+
+Attributes:
+```java
+BoardFactory bf
+```
+
+Methods:
+```java
+play()
+```
+# Testing Procedures
+*Used the same inputs previously stated as an example
+
+Utilized JUnit and Mockito to ascertain the return values of the following methods in PieceValidator.java:
+```java
+  validateMove
+  getMoves 
+  validatePawnMove
+  validateKingMove
+  validateQueenMove
+  validateRookMove
+  validateBishopMove
+  validateKnightMove
+```
