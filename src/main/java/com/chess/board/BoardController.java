@@ -1,9 +1,9 @@
-package com.drexel.edu.se567.Chess.Board;
+package com.chess.board;
 
 import java.util.ArrayList;
 
-import core.PieceValidator;
-import core.Tile;
+import com.chess.core.PieceValidator;
+import com.chess.core.Tile;
 
 public class BoardController {
 	protected BoardFactory bf;

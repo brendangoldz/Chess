@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core;
+package com.chess.core;
 
 /**
  * @author brendangoldsmith
@@ -22,7 +22,7 @@ public enum PieceEnum {
 
 	public static PieceEnum fromString(String s) {
 		for (PieceEnum p : PieceEnum.values()) {
-			if (s.toUpperCase().equals(p.name)) {
+			if (s.equalsIgnoreCase(p.name)) {
 				return p;
 			}
 		}

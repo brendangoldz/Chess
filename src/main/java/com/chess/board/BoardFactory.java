@@ -1,9 +1,10 @@
-package com.drexel.edu.se567.Chess.Board;
+package com.chess.board;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-import core.Tile;
+import com.chess.core.Tile;
 
 public class BoardFactory {
 	protected ArrayList<Tile> board = new ArrayList<>();

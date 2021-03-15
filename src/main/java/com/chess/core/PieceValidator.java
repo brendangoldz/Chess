@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core;
+package com.chess.core;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,21 +21,9 @@ public class PieceValidator {
 		this.board = boardConfig;
 	}
 
-	/**
-	 * @param curr
-	 * @param targTile
-	 * @return
-	 */
-	public boolean validateDiagonally(Tile curr, Tile targTile) {
-		int startRow = curr.getRow();
-		char startCol = curr.getCol();
-
-		char endCol = targTile.getCol();
-		int endRow = targTile.getRow();
-
+	
+	public int getDiagonalDirection(int startRow, int endRow, char startCol, char endCol) {
 		// NE, NW, SW, SE
-		int[][] DIRS = { { -1, 1 }, { -1, -1 }, { 1, -1 }, { 1, 1 } };
-
 		int dir = 0;
 		// NE
 		if (startRow > endRow && Character.compare(startCol, endCol) < 0) {
@@ -54,11 +42,31 @@ public class PieceValidator {
 
 			dir = 3;
 		}
+		
+		return dir;
+	}
+	
+	
+	/**
+	 * @param curr
+	 * @param targTile
+	 * @return
+	 */
+	public boolean validateDiagonally(Tile curr, Tile targTile) {
+		int startRow = curr.getRow();
+		char startCol = curr.getCol();
+
+		char endCol = targTile.getCol();
+		int endRow = targTile.getRow();
+
+		int dir = getDiagonalDirection(startRow, endRow, startCol, endCol);
 
 		int diff = Math.abs(Character.compare(startCol, endCol));
 
-		int rowDir = DIRS[dir][0];
-		int colDir = DIRS[dir][1];
+		int[][] dirs = { { -1, 1 }, { -1, -1 }, { 1, -1 }, { 1, 1 } };
+
+		int rowDir = dirs[dir][0];
+		int colDir = dirs[dir][1];
 
 		int targetRow = startRow + (diff * rowDir);
 		char targetCol = startCol;
@@ -138,9 +146,6 @@ public class PieceValidator {
 		int startRow = curr.getRow();
 		char startCol = curr.getCol();
 		int endRow = targ.getRow();
-		
-		System.out.println("Start Row: " + startRow);
-		System.out.println("End Row: " + endRow);
 		
 		int rowDiff = startRow - endRow;
 

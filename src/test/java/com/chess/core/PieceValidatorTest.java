@@ -1,4 +1,5 @@
-package core;
+package com.chess.core;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,8 +13,8 @@ import java.util.Scanner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.drexel.edu.se567.Chess.Board.BoardFactory;
-import com.drexel.edu.se567.Chess.Board.BoardInput;
+import com.chess.board.BoardFactory;
+import com.chess.board.BoardInput;
 class PieceValidatorTest {
 	PieceValidator pv;
 	BoardFactory bf;

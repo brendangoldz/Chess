@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core;
+package com.chess.core;
 
 /**
  * @author brendangoldsmith

@@ -1,4 +1,5 @@
-package core;
+package com.chess.core;
+
 
 public enum ColorEnum {
 	BLACK("Black"), WHITE("White");

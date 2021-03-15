@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.drexel.edu.se567.Chess.Board;
+package com.chess.board;
 
 import java.util.List;
 import java.util.Scanner;
 
-import core.ColorEnum;
-import core.Piece;
-import core.PieceEnum;
-import core.Tile;
+import com.chess.core.ColorEnum;
+import com.chess.core.Piece;
+import com.chess.core.PieceEnum;
+import com.chess.core.Tile;
 
 /**
  * @author brendangoldsmith
@@ -37,8 +37,7 @@ public class BoardInput {
 				char column = piece[1];
 				int row = Integer.parseInt(String.valueOf(piece[2]));
 				t = new Tile(row, column, new Piece(pe, col));
-				if (t != null)
-					pieces.add(t);
+				pieces.add(t);
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid input, restarting white position entry.");
@@ -60,9 +59,7 @@ public class BoardInput {
 				char column = piece[1];
 				int row = Integer.parseInt(String.valueOf(piece[2]));
 				t = new Tile(row, column, new Piece(pe, col));
-
-				if (t != null)
-					pieces.add(t);
+				pieces.add(t);
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid input, restarting black position entry.");
